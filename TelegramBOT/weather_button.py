@@ -40,8 +40,6 @@ def find_weather(message):
 
 
 def reply_find_weather(message):
-    print(message.text)
-    print(message)
     if message.text == 'Да':
         msg = bot.reply_to(message, 'Напиши город или страну')
         bot.register_next_step_handler(msg, find_weather)

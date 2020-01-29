@@ -14,28 +14,22 @@ def input_weight(message):
 
 
 def find_height(message):
-    print(message.text)
-    message.text = (message.text).replace(',', '.')
+    message.text = message.text.replace(',', '.')
     try:
         message.text = float(message.text)
         if message.text > 0:
             global height
             height = message.text
             input_weight(message)
-            print(height)
         else:
-            print(message.text)
             bot.send_message(message.chat.id, 'Рост не может быть <=0, давай ещё раз!')
             input_height(message)
     except:
-        print(message.text)
         bot.send_message(message.chat.id, 'Что ты написал вообще?')
         input_height(message)
 
 
 def find_weight(message):
-
-    print(message.text)
     message.text = (message.text).replace(',', '.')
     try:
         message.text = float(message.text)
@@ -43,13 +37,10 @@ def find_weight(message):
             global weight
             weight = message.text
             imt_calculation(message)
-            print(weight)
         else:
-            print(message.text)
             bot.send_message(message.chat.id, 'Вес не может быть <=0, давай ещё раз!')
             input_weight(message)
     except:
-        print(message.text)
         bot.send_message(message.chat.id, 'Может ты не так меня понял?')
         input_weight(message)
 
